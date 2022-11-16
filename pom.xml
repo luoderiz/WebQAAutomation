@@ -35,7 +35,7 @@
 
 		<!-- client project custom properties -->
 		<web-app.url>http://www.google.com.ar</web-app.url>
-
+		<web.url>https://practice.automationtesting.in/</web.url>
 	</properties>
 	<profiles>
 	
