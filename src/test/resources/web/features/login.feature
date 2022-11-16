@@ -10,7 +10,7 @@ Feature: Login
     And I click on Login Button
     Then I am redirected to My Account Home Page
 
-    @Ignore
+
   Scenario Outline: Login failure
     When I enter <Email> in Login User TextBox
     And I enter <Password> in Login Password Textbox

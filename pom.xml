@@ -7,10 +7,10 @@
 		<version>3.2.3.8</version>
 	</parent>
 
-	<groupId>Lippia-Web-Example-Project</groupId>
-	<artifactId>LippiaWebExampleProject</artifactId>
+	<groupId>Web-QA-Automation</groupId>
+	<artifactId>WebQAAutomation</artifactId>
 	<version>1.0.0</version>
-	<name>crowdar_automation_web</name>
+	<name>web_final_project</name>
 
 	<packaging>jar</packaging>
 
