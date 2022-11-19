@@ -6,13 +6,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import lippia.web.services.LoginService;
 import lippia.web.constants.LoginConstants;
+import lippia.web.services.LoginService;
 
 public class LoginSteps {
 
     @Given("I am in automationtesting site")
-    public void home() {
+    public void goToHome() {
         LoginService.navigateWeb();
     }
 
@@ -39,12 +39,12 @@ public class LoginSteps {
     }
 
     @Then("I am redirected to My Account Home Page")
-    public void loginSuccessful() {
-        LoginService.verifyLogin();
+    public void verifySuccessfulLogin() {
+        LoginService.verifyPresence(LoginConstants.WELCOME_MESSAGE);
     }
 
     @When("I enter (.*) in Login User TextBox")
-    public void enterUser(String username) {
+    public void enterUsername(String username) {
         LoginService.enter(LoginConstants.USERNAME_TEXTBOX, username);
     }
 
@@ -54,8 +54,39 @@ public class LoginSteps {
     }
 
     @Then("An error message will announce Login failure")
-    public void loginFail() {
+    public void verifyFailLogin() {
         LoginService.verifyPresence(LoginConstants.ERROR_MESSAGE);
+    }
+
+    @And("I am logged in")
+    public void login() {
+        String username = PropertyManager.getProperty("valid.username");
+        LoginService.enter(LoginConstants.USERNAME_TEXTBOX, username);
+        String password = PropertyManager.getProperty("valid.password");
+        LoginService.enter(LoginConstants.PASSWORD_TEXTBOX, password);
+        LoginService.click(LoginConstants.LOGIN_BUTTON);
+        LoginService.verifyPresence(LoginConstants.WELCOME_MESSAGE);
+    }
+
+    @When("I log out of the site")
+    public void logout() {
+        LoginService.click(LoginConstants.LOGOUT_BUTTON);
+    }
+
+    @And("I press the back button of my browser")
+    public void goBack() {
+        LoginService.navigateBack();
+    }
+
+    @Then("The login page must be visible")
+    public void verifySite() {
+        LoginService.verifyPresence(LoginConstants.LOGIN_BUTTON);
+    }
+
+    @And("I shouldn’t be signed in to my account")
+    public void VerifySuccessfulLogout() {
+        LoginService.click(LoginConstants.MY_ACCOUNT_MENU);
+        LoginService.verifyPresence(LoginConstants.LOGIN_BUTTON);
     }
 
 }
