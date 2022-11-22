@@ -48,7 +48,7 @@ public class HomePageSteps {
 
     @Then("I am redirected to the Add to Basket Page")
     public void verifyRedirectionToAddToBasket() {
-        HomePageService.verifyRedirection("/product/");
+        HomePageService.verifyRedirection("product");
         LoginService.verifyPresence(ProductConstants.ADD_TO_BASKET_BUTTON);
     }
 

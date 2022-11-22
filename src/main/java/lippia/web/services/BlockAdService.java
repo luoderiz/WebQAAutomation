@@ -23,9 +23,6 @@ public class BlockAdService extends WebActionManager {
                 driver.switchTo().defaultContent();
             }
         } catch (Exception e) {
-            System.out.println("No Ads found!");
-        } finally {
-            System.out.println("Ad Blocking Service has finished");
         }
     }
 

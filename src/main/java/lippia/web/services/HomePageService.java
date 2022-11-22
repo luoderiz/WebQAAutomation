@@ -15,7 +15,6 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Objects;
 
 public class HomePageService extends ActionManager {
 
@@ -27,12 +26,9 @@ public class HomePageService extends ActionManager {
 
     public static void verifyRedirection(String path) {
         String page = DriverManager.getDriverInstance().getCurrentUrl();
-        if(page.contains(path)) {
-            Assert.assertTrue(page.contains(path));
-        } else {
+        if(!page.contains(path)) {
             Assert.fail("User was not redirected to the expected page");
-        }
-    }
+        }    }
 
     public static Double getValue(String element) {
         String text = getText(element);
@@ -87,7 +83,6 @@ public class HomePageService extends ActionManager {
 
     public static void read(String locatorElement) {
         String details = getText(locatorElement);
-        System.out.println(details);
         if (details.isEmpty()) {
             Assert.fail("Missing order details at Confirm Order Page");
         }

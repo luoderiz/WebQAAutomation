@@ -12,8 +12,6 @@ public class LoginService extends ActionManager {
         WebActionManager.navigateTo(PropertyManager.getProperty("web.url"));
         BlockAdService.closeAds();
     }
-    //todo delete web.base.url from config.properties
-    //todo delete web-app.url from pom
 
     public static void navigateBack() {
         DriverManager.getDriverInstance().navigate().back();

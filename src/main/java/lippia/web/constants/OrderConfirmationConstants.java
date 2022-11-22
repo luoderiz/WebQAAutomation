@@ -2,8 +2,6 @@ package lippia.web.constants;
 
 public class OrderConfirmationConstants {
 
-    public static final String ORDER_DETAILS = "xpath://ul[@class='woocommerce-thankyou-order-details order_details']";
-
     public static final String ORDER_NUMBER = "xpath://li[@class='order']/strong";
 
     public static final String ORDER_DATE = "xpath://li[@class='date']/strong";
@@ -23,6 +21,5 @@ public class OrderConfirmationConstants {
     public static final String ORDER_DETAILS_TAX = "xpath://tr[th[contains(text(), 'Tax')]]/td/span[@class='woocommerce-Price-amount amount']";
 
     public static final String ORDER_DETAILS_TOTAL = "xpath://tr[th[contains(text(), 'Total')]]/td/span[@class='woocommerce-Price-amount amount']";
-
 
 }

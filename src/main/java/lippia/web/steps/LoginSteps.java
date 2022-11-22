@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import lippia.web.constants.LoginConstants;
+import lippia.web.services.HomePageService;
 import lippia.web.services.LoginService;
 
 public class LoginSteps {
@@ -40,6 +41,7 @@ public class LoginSteps {
 
     @Then("I am redirected to My Account Home Page")
     public void verifySuccessfulLogin() {
+        HomePageService.verifyRedirection("/my-account/");
         LoginService.verifyPresence(LoginConstants.WELCOME_MESSAGE);
     }
 

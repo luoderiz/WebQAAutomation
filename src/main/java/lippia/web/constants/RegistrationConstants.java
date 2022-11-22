@@ -1,8 +1,6 @@
 package lippia.web.constants;
 
-public class RegisterConstants {
-
-    public static final String MY_ACCOUNT_MENU = "id:menu-item-50";
+public class RegistrationConstants {
 
     public static final String EMAIL_TEXTBOX = "id:reg_email";
 
@@ -11,6 +9,5 @@ public class RegisterConstants {
     public static final String REGISTER_BUTTON = "xpath://input[@type='submit'][@name='register']";
 
     public static final String ERROR_MESSAGE = "xpath://ul[@class='woocommerce-error']";
-
 
 }
