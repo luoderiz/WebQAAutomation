@@ -43,14 +43,16 @@ public class LoginSteps {
         LoginService.verifyPresence(LoginConstants.WELCOME_MESSAGE);
     }
 
-    @When("I enter (.*) in Login User TextBox")
-    public void enterUsername(String username) {
-        LoginService.enter(LoginConstants.USERNAME_TEXTBOX, username);
+    @When("I enter a case changed username in Login User TextBox")
+    public void enterCaseChangedUsername() {
+        String upperCaseUsername = PropertyManager.getProperty("valid.username").toUpperCase();
+        LoginService.enter(LoginConstants.USERNAME_TEXTBOX, upperCaseUsername);
     }
 
-    @And("I enter (.*) in Login Password Textbox")
-    public void enterPassword(String password) {
-        LoginService.enter(LoginConstants.PASSWORD_TEXTBOX, password);
+    @And("I enter a case changed password in Login Password Textbox")
+    public void enterCaseChangedPassword() {
+        String upperCasePassword = PropertyManager.getProperty("valid.password").toUpperCase();
+        LoginService.enter(LoginConstants.PASSWORD_TEXTBOX, upperCasePassword);
     }
 
     @Then("An error message will announce Login failure")

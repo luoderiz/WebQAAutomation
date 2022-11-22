@@ -107,6 +107,8 @@
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
 			<version>1.1.0.10</version>
 		</dependency>
+
+
 	</dependencies>
 	<build>
 		<filters>

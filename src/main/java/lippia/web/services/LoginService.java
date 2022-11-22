@@ -4,9 +4,7 @@ import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import com.crowdar.driver.DriverManager;
-import lippia.web.constants.LoginConstants;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class LoginService extends ActionManager {
 
@@ -32,14 +30,8 @@ public class LoginService extends ActionManager {
         setInput(element, data, true, false);
     }
 
-    public static void checkUrl(String expectedValue) {
-        String actualValue = DriverManager.getDriverInstance().getCurrentUrl();
-        Assert.assertEquals(actualValue, expectedValue);
-    }
-
     public static void verifyPresence(String element) {
         isPresent(element);
     }
-
 
 }
