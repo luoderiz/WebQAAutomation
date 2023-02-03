@@ -83,8 +83,8 @@
 			</properties>
 		</profile>
 
-				
-		<profile> 
+
+		<profile>
 			<id>stack_local</id>
 			<properties>
 				<crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>

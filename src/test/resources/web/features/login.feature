@@ -1,4 +1,4 @@
-@Ignore
+@Smoke
 Feature: Login
   Background:
     Given I am in automationtesting site
