@@ -1,12 +1,40 @@
-# Lippia Web sample project
+# About this Project
+
+Automation Testing Practice on a full-featured e-commerce website simulator, made on Lippia Web Framework.
+
+The complete online shopping workflow is covered: tests go from login page to product selection and add/edit the shopping cart. 
+
+Selenium scripts were written to fill address, shipping details, and proceed to simulate payment.
+
+
+## Credentials for login test
+
+- Run with maven:
+
+$ mvn clean test -Dpassword='Raffaella0303456' -Dusername='raffaella@carra.com'
+
+
+## Test Results
+
+![Dashboard](https://user-images.githubusercontent.com/94746195/216504604-9ea8ed2f-9895-4c81-b12f-5b64b32ab3e6.jpg)
+
+![HomePage](https://user-images.githubusercontent.com/94746195/216504718-c1e93d4b-741d-4a26-83a0-dddabffa60c3.jpg)
+
+![Login](https://user-images.githubusercontent.com/94746195/216504801-08d4b653-a8e2-49bc-9a6e-c9048c2a3cc4.jpg)
+
+![Account](https://user-images.githubusercontent.com/94746195/216504890-224f358a-3b1b-4698-baba-0107e5a3dc8c.jpg)
+
+![Registration](https://user-images.githubusercontent.com/94746195/216504931-b67169b1-2b9a-474c-8ccf-96c4be666e4b.jpg)
+
+
+---
+
+
+# About Lippia Web
 
 <!--## Architecture
 
 ![Lippia Architecture Web](docs/img/architecture_web_lippia.png)
-
-- Through Spring rest client, Lippia supports web tests, being able to reuse definitions from other tests as well as including this behavior in tests of other types such as mobile, API, etc.
-
-- We believe that the best approach to automate testing from conception to deployment is to use BDD (Behaviour Driven Development) to include not just Developers, but Testers and Business Analysts, and that is why...   
 
 The scenarios can be written using BDD methodology. 
     
@@ -15,7 +43,6 @@ The scenarios can be written using BDD methodology.
     When as actions
     
     Then as validations
-    
     
 On each declared step you can insert the calls defined from service classes -->
 
@@ -26,24 +53,9 @@ On each declared step you can insert the calls defined from service classes -->
 + docker 18.09+: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
 + docker compose 1.24+: https://docs.docker.com/compose/install/ _OPTIONAL_ 
 
-
 "This project is licensed under the terms of the MIT license."
 
-# Update Version Lippia 3
-
-## Main Features: 
-- Added multiple reports of extent reports
-- Added the feature to handle the chrome options by a json file
-- Include project type properties that allows to decide which library would need for the project
-- Added the dependency for lippia report server 
-- Cucumber version updated
-
-
 # Getting started
-
-This project has the intention of showing a way practically how to use Lippia Automation Framework to build automated tests by using Gherkin and Page-Object Model pattern.  
-This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
-
 
 - ## Running with Maven
 
