@@ -4,7 +4,6 @@ public class PaymentGatewayConstants {
 
     public static final String FINAL_BILLING_DETAILS = "xpath://h3[.='Billing Details']";
     public static final String FINAL_ORDER_REVIEW_DETAILS = "xpath://h3[@id='order_review_heading']";
-
     public static final String FINAL_ADDITIONAL_DETAILS = "xpath://h3[.='Additional Information']";
 
     public static final String CART_DETAILS_PRODUCT_NAME = "xpath://tbody/tr[@class='cart_item']/td[@class='product-name']";

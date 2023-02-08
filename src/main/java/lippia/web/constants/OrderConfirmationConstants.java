@@ -20,6 +20,8 @@ public class OrderConfirmationConstants {
 
     public static final String ORDER_DETAILS_TAX = "xpath://tr[th[contains(text(), 'Tax')]]/td/span[@class='woocommerce-Price-amount amount']";
 
-    public static final String ORDER_DETAILS_TOTAL = "xpath://tr[th[contains(text(), 'Total')]]/td/span[@class='woocommerce-Price-amount amount']";
+    public static final String ORDER_DETAILS_TOTAL = "xpath://tr[@class='order-total']/td/strong/span[@class='woocommerce-Price-amount amount']";
+
+    public static final String ORDER_LOCATION = "xpath://div[@class='select2-container country_to_state country_select']/a[@class='select2-choice']/span[@class='select2-chosen']";
 
 }

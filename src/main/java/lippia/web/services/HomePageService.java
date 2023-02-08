@@ -4,10 +4,7 @@ import com.crowdar.core.actions.ActionManager;
 
 import com.crowdar.driver.DriverManager;
 import gherkin.deps.com.google.gson.Gson;
-import lippia.web.constants.HomeConstants;
-import lippia.web.constants.PaymentGatewayConstants;
-import lippia.web.constants.ProductConstants;
-import lippia.web.constants.User;
+import lippia.web.constants.*;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -16,7 +13,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+import static java.lang.Math.abs;
+
 public class HomePageService extends ActionManager {
+    private static final double epsilon = 0.1;
 
     public static void verify(String locatorElement, int expectedValue) {
         List<WebElement> elements = getElements(locatorElement);
@@ -85,6 +85,20 @@ public class HomePageService extends ActionManager {
         String details = getText(locatorElement);
         if (details.isEmpty()) {
             Assert.fail("Missing order details at Confirm Order Page");
+        }
+    }
+
+    public static Double calculateTaxRate() {
+        double taxValue = getValue(OrderConfirmationConstants.ORDER_DETAILS_TAX);
+        double totalValue = getValue(OrderConfirmationConstants.ORDER_DETAILS_TOTAL);
+        return taxValue * 100 / totalValue;
+    }
+
+    public static void verifyTaxRate(double indiaTax, double abroadTax) {
+        String location = getText(OrderConfirmationConstants.ORDER_LOCATION);
+        if (location.equals("India")) {
+            Assert.assertTrue(abs(indiaTax - calculateTaxRate()) <= epsilon);
+        } else { Assert.assertTrue(abs(abroadTax - calculateTaxRate()) <= epsilon);
         }
     }
 }
